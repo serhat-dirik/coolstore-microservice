@@ -1584,7 +1584,7 @@ objects:
       app: netflix
     name: turbine-server
   spec:
-    replicas: 0
+    replicas: 1
     selector:
       deploymentconfig: turbine-server
       component: turbine-server
@@ -1694,7 +1694,7 @@ objects:
       app: netflix
     name: hystrix-dashboard
   spec:
-    replicas: 0
+    replicas: 1
     selector:
       deploymentconfig: hystrix-dashboard
       component: hystrix-dashboard
@@ -1788,7 +1788,7 @@ parameters:
   displayName: Git source repository
   name: GIT_URI
   required: true
-  value: https://github.com/jbossdemocentral/coolstore-microservice
+  value: https://github.com/serhat-dirik/coolstore-microservice
 - displayName: Git branch/tag reference
   name: GIT_REF
   required: true
@@ -1804,26 +1804,22 @@ parameters:
   name: BOWER_MIRROR
 - description: Inventory Service database user name
   displayName: Inventory Database username
-  from: user[a-zA-Z0-9]{3}
-  generate: expression
+  value: db-user
   name: INVENTORY_DB_USERNAME
   required: true
 - description: Inventory Service database user password
   displayName: Inventory Database password
-  from: '[a-zA-Z0-9]{8}'
-  generate: expression
+  value: redhat1!
   name: INVENTORY_DB_PASSWORD
   required: true
 - description: Catalog Service database user name
   displayName: Catalog Database username
-  from: user[a-zA-Z0-9]{3}
-  generate: expression
+  value: db-user
   name: CATALOG_DB_USERNAME
   required: true
 - description: Catalog Service database user password
   displayName: Catalog Database password
-  from: '[a-zA-Z0-9]{8}'
-  generate: expression
+  value: redhat1!
   name: CATALOG_DB_PASSWORD
   required: true
 - description: Decision Server Username
@@ -1841,26 +1837,22 @@ parameters:
   value: CoolStoreRulesContainer=com.redhat:coolstore:2.0.0
 - description: Rating Service database user name
   displayName: Rating Database username
-  from: user[a-zA-Z0-9]{3}
-  generate: expression
+  value: db-user
   name: RATING_DB_USERNAME
   required: true
 - description: Rating Service database user password
   displayName: Rating Database password
-  from: '[a-zA-Z0-9]{8}'
-  generate: expression
+  value: redhat1!
   name: RATING_DB_PASSWORD
   required: true
 - description: Review Service database user name
   displayName: Review Database username
-  from: user[a-zA-Z0-9]{3}
-  generate: expression
+  value: db-user
   name: REVIEW_DB_USERNAME
   required: true
 - description: Review Service database user password
   displayName: Review Database password
-  from: '[a-zA-Z0-9]{8}'
-  generate: expression
+  value: redhat1!
   name: REVIEW_DB_PASSWORD
   required: true
 - description: Namespace in which the ImageStreams for Red Hat Middleware images are installed. These ImageStreams are normally installed in the openshift namespace. You should only need to modify this if you've installed the ImageStreams in a different namespace/project.
